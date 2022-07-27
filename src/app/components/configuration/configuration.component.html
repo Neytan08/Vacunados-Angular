@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col">
+       
+        </div>
+        <div class="col">
+            <p class="fs-2 text-light">Ajustes</p>
+        </div>
+    </div>
+    <hr class="text-light">
+
+    <!-- Data in local storage -->
+    <div class="row align-items-center">
+        <div class="col">
+            <p class="fs-3 text-light">Datos guardados</p>
+        </div>
+        <div class="col">
+            <button type="button" (click)="deleteData()" class="btn btn-outline-danger" [disabled]="disableButton">Eliminar datos</button>
+        </div>
+        <div >
+            <button (click)="goBack()" type="button" class="button"><img src="../../../assets/icons/back.png"></button>
+        </div>
+    </div>

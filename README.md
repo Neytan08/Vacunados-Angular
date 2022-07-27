@@ -1,0 +1,1 @@
+# vacunados-frontend

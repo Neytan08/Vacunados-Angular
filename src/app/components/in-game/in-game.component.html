@@ -1,0 +1,95 @@
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col">
+            <p class="fs-2 text-light">Partida iniciada</p>
+        </div>
+        <div class="col">
+            <button (click)="goBack()" type="button" class="button"><img src="../../../assets/icons/back.png"></button>
+        </div>
+    </div>
+
+    <hr class="text-light">
+
+    <div class="row">
+        <div class="col">
+            <div role="alert" class='alert alert-success text-center' [hidden]="!isCitizen">
+                {{playerRol}}
+                <p id=textPlayerRol></p>
+            </div>
+
+            <div role="alert" class='alert alert-danger text-center' [hidden]="isCitizen">
+                {{playerRol}}
+                <p id=textPlayerRol></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="score" class="form-label text-light">Puntaje:</label>
+            </div>
+
+            <div class="col">
+                <label id="score" class="form-label text-light" type="text" aria-label="Puntaje"></label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="status" class="form-label text-light">Estado:</label>
+            </div>
+
+            <div class="col">
+                <label id="status" class="form-label text-light" type="text" aria-label="Estado"></label>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="owner" class="form-label text-light">Dueño:</label>
+            </div>
+
+            <div class="col">
+                <label id="owner" class="form-label text-light" type="text" aria-label="Dueño"></label>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="week" class="form-label text-light">Semana:</label>
+            </div>
+
+            <div class="col">
+                <label id="week" class="form-label text-light" type="text" aria-label="Semana"></label>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Player checkbox list-->
+    <div id="checkPlayer" style="visibility: hidden;">
+        <div class="container-sm">
+            <div class="col"><!-- cambiar en el css-->
+                <label class="form-label text-light" type="text">¿Quienes pueden salir la siguiente semana?</label>
+            </div>
+
+            <tr *ngFor="let player of playerList" class="row">
+                <div class="col-8  col-chk text-light"><input type="checkbox" name="{{player}}" (click)="selectPlayer(player)"></div>
+                <td class="col-35 text-light"><label>{{player}}</label></td>
+            </tr>
+
+            <button id="sendGroup" (click)="groupProposal()" type="button" class="btn btn-light">Enviar grupo</button>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="col">
+            <button id="useMaskButton" (click)=goRound(false) type="button" class="btn btn-light" style="margin:5px"><img src="../../../assets/icons/mascarilla.png"></button>
+
+            <button id="dontUseMaskButton" (click)=goRound(true) type="button" class="btn btn-light"><img src="../../../assets/icons/coronavirus.png"></button>
+        </div>
+    </div>
+</div>

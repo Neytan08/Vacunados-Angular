@@ -1,0 +1,18 @@
+<ng-container>
+    <div class="center">
+        <div class="col text-center">
+            <img src="../../../assets/images/logoGame1.png" class="rounded mx-auto d-block"
+                alt="vacunadosDosLogo">
+            <hr>
+            <hr>
+            <hr>
+            <!-- Loader -->
+                <button class="btn btn-outline-light loading-message" type="button" disabled
+                    *ngIf="!gameStatusChecked">
+                    <span class="spinner-border spinner-border-sm " role="status" aria-hidden="true"></span>
+                </button>
+                <button (click)="showCreateFindGame()" type="button" class="glow-on-hover"
+                    *ngIf="gameStatusChecked">Jugar ahora!</button>
+        </div>
+    </div>
+</ng-container>

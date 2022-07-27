@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col">
+          
+        </div>
+        <div class="col">
+            <p class="fs-2 text-light">Crear partida</p>
+        </div>
+    </div>
+    <hr class="text-light">
+    <form autocomplete="off" [formGroup]="form">
+        <!-- Configuration label -->
+        <div class="row">
+            <p class="fs-4 text-light">Configuración de la partida</p>
+        </div>
+        <br>
+        <!-- GameName Input-->
+        <div class="row">
+            <div class="col">
+                <label class="form-label text-light">Nombre de la partida</label>
+            </div>
+            <div class="col">
+                <input formControlName="gameName" type="text" class="form-control" placeholder="Nombre de partida"
+                    [class.is-invalid]="gameNameInvalid" maxlength="20">
+                <small class="text-danger" *ngIf="gameNameInvalid">Ingrese el nombre de la partida</small>
+            </div>
+        </div>
+        <br>
+        <!-- GamePassword Input-->
+        <div class="row">
+            <div class="col">
+                <label class="form-label text-light">Contraseña de la partida (opcional)</label>
+            </div>
+            <div class="col">
+                <input formControlName="gamePassword" type="password" class="form-control"
+                    placeholder="Ingrese la contraseña">
+            </div>
+        </div>
+        <br>
+        <div>
+            
+            <div >
+                <button (click)="goBack()" type="button" class="button"><img src="../../../assets/icons/back.png"></button>
+                <button type="button" (click)="onSubmit()" [disabled]="form.invalid" class="button"><img src="../../../assets/icons/save.png"></button>
+            </div>
+        </div>
+    </form>
+</div>

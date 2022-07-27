@@ -1,0 +1,57 @@
+.image-size {
+    height: 96px;
+    width: 96px;
+}
+
+.hr-username {
+    width: 50%;
+    color: #A9E5D5;
+}
+
+.menu-option {
+    cursor: pointer;
+    margin: 2%;
+    padding: 2%;
+    border: none;
+
+}
+
+.menu-option:hover {
+    background-color: #F9AB40;
+}
+
+input[type=text],[type=password] {
+    width: 50%;
+    background-color: #0C2D48;
+    border: none;
+    color: #A9E5D5;
+    text-align: center;
+    border-bottom: 2px solid#F9AB40;
+ 
+}
+
+input[type=text], [type=password]:focus {
+    background-color: #0C2D48;
+}
+.boton-color:hover{background:#F9AB40; border: none;}
+
+
+.button {
+          display: inline-block;
+          padding: 0 0px;
+          cursor: pointer;
+          outline: none;
+          color: transparent;
+          background-color: transparent;
+          border: none;
+          border-radius: 100px;
+          box-shadow: 0 0px #999;
+        }
+        
+        .button:hover {background-color: transparent}
+        
+        .button:active {
+          background-color: transparent;
+          box-shadow: 0 5px #666;
+          transform: translateY(4px);
+        }

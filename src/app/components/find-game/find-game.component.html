@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col">
+          
+        </div>
+        <div class="col">
+            <p class="fs-2 text-light">Lista de partidas</p>
+        </div>
+    </div>
+    <hr class="text-light">
+    <!-- Filter Input -->
+    <!-- Username Input -->
+    <form autocomplete="off" [formGroup]="form">
+        <br>
+        <div class="row">
+            <img for="searchBox" [src]="searchIcon" class="search-icon">
+            <input type="text" class="form-control" formControlName="name" placeholder="Buscar" id="searchBox">
+        </div>
+    </form>
+    <div class="container-sm">
+        <hr class="mb-5" />
+        <div class="row m-5">
+            <div class="col text-center">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Partidas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Loader -->
+                        <button class="btn btn-outline-light loading-message" type="button" disabled *ngIf="!gamesListLoaded">
+                            <span class="spinner-border spinner-border-sm " role="status" aria-hidden="true"></span>
+                            {{getLoadingMessage()}}
+                        </button>
+                        <tr *ngIf="gamesFound">
+                            <small class="text-danger">No se encontraron partidas</small>
+                        </tr>
+                        <tr *ngFor="let game of getFilteredList()">
+                            <td (click)="joinGame(game)" class="m-2 mr-md-5">{{ game.name }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <button (click)="goBack()" type="button" class="button"><img src="../../../assets/icons/back.png"></button>
+    </div>
+    
+</div>

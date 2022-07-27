@@ -1,0 +1,18 @@
+<app-navbar [hidden]="hideNavbar()"></app-navbar>
+<div class="container m-5">
+    <ng-container>
+        <div class="center">
+            <div [ngSwitch]="getSelectedPage()" class="container-fluid p-5">
+                <app-home *ngSwitchCase="'home'"></app-home>
+                <app-configuration *ngSwitchCase="'configuration'"></app-configuration>
+                <app-server-configuration *ngSwitchCase="'server-configuration'"></app-server-configuration>
+                <app-create-find-game *ngSwitchCase="'create-find-game'"></app-create-find-game>
+                <app-create-game *ngSwitchCase="'create-game'"></app-create-game>
+                <app-find-game *ngSwitchCase="'find-game'"></app-find-game>
+                <app-lobby *ngSwitchCase="'lobby'"></app-lobby>
+                <app-in-game *ngSwitchCase="'in-game'"></app-in-game>
+                <app-finish-game *ngSwitchCase="'finish-game'"></app-finish-game>
+            </div>
+        </div>
+    </ng-container>
+</div>

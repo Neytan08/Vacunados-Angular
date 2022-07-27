@@ -1,0 +1,35 @@
+.save-button {
+    width: 100px;
+    margin-top: 3%;
+}
+
+.row {
+    margin: 1%
+}
+
+.boton-color:hover{background:#FFCE66; border: none;}
+
+.button {
+    display: inline-block;
+    padding: 0 0px;
+    cursor: pointer;
+    outline: none;
+    color: transparent;
+    background-color: transparent;
+    border: none;
+    border-radius: 100px;
+    box-shadow: 0 0px #999;
+}
+  
+.button:hover {
+    background-color: transparent
+}
+  
+.button:active {
+    background-color: transparent;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+.form-control{
+    width: 200%;
+}

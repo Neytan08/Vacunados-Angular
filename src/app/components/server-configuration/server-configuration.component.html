@@ -1,0 +1,55 @@
+<div class="container">
+    <!-- Menu title -->
+    <div class="row align-items-center">
+     
+        <div class="col">
+            <p class="fs-2 text-light">Configuración del servidor</p>
+        </div>
+    </div>
+    <hr class="text-light">
+    <form autocomplete="off" [formGroup]="form">
+        <!-- Default Server Check -->
+        <div class="row">
+            <div class="col-6 col-sm-3">
+                <label class="form-label text-light">Utilizar servidor predeterminado</label>
+            </div>
+            <div class="col-6 col-sm-3">
+                <div class="form-check form-switch">
+                    <input (click)="switchDefaultServer()" class="form-check-input" type="checkbox"
+                        [checked]="useDefaultServer">
+                </div>
+            </div>
+        </div>
+        <!-- Server Address -->
+        <div class="row">
+            <div class="col-6 col-sm-3">
+                <label class="form-label text-light">URL</label>
+            </div>
+            <div class="col-6 col-sm-3">
+                <input formControlName="serverAddress" class="form-control" type="text"
+                    [class.is-invalid]="serverAddressInvalid">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 col-sm-3">
+                <label class="form-label text-light">Estado</label>
+            </div>
+            <div class="col-6 col-sm-3">
+                <span class="badge rounded-pill bg-success" [hidden]="!isOnline">En linea</span>
+                <span class="badge rounded-pill bg-secondary" [hidden]="isOnline">Sin conexión</span>
+            </div>
+        </div>
+        <!-- Save Button -->
+        <div>
+            <div ></div>
+            <div >
+                <button (click)="goBack()" type="button" class="button"><img src="../../../assets/icons/back.png"></button>
+                <button type="button" (click)="onSubmit()" type="button" class="button"
+                    [disabled]="disableButton()"><img src="../../../assets/icons/save.png"></button>
+                  
+                
+        
+            </div>
+        </div>
+    </form>
+</div>

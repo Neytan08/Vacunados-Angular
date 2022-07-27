@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col">
+            <p class="fs-2 text-light">Partidas</p>
+        </div>
+        <div class="col">
+           
+        </div>
+    </div>
+    <hr class="text-light">
+    <!-- Username Input -->
+    <form autocomplete="off" [formGroup]="form">
+        <div class="row">
+            <input type="text" class="form-control" placeholder="Ingrese su nombre de usuario" aria-label="Username"
+                formControlName="username" maxlength="16" [class.is-invalid]="usernameInvalid">>
+        </div>
+        <div class="row">
+            <small class="text-danger" *ngIf="usernameInvalid">Debe ingresar un nombre de usuario para jugar!</small>
+        </div>
+        <!-- Create game Option -->
+        <div class="row">
+            <button class="menu-option" type="submit" (click)="onSubmit('create-game')">
+                <div class="row">
+                    <div class="col-4">
+                        <img class="image-size" src="../../../assets/images/newGame1.png" alt="crear partida">
+                    </div>
+                    <div class="col-7">
+                        <p class="fs-2 text-light">Nueva partida</p>
+                        </div>
+                </div>
+            </button>
+        </div>
+        <!-- Search game Option -->
+        <div class="row">
+            <button class="menu-option" type="button" (click)="onSubmit('search-game')">
+            <div class="row">
+                <div class="col-4">
+                    <img class="image-size" src="../../../assets/images/findGame.png" alt="Buscar partida">
+                </div>
+                <div class="col-7">
+                    <p class="fs-3 text-light align-middle">Buscar partida</p>
+                </div>
+            </div>
+            </button>
+        </div>
+    </form>
+    <div>
+        <button (click)="goBack()" type="button" class="btn btn-two"><img src="../../../assets/icons/back.png"></button>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col">
+            
+        </div>
+        <div class="col">
+            <p class="fs-2 text-light">Lobby</p>
+        </div>
+  
+    </div>
+
+
+    <hr class="text-light">
+    <!-- Loader -->
+    <button class="btn btn-outline-light" type="button" disabled *ngIf="startingGame">
+        <span class="spinner-border spinner-border-sm " role="status" aria-hidden="true"></span>
+        Iniciando partida
+    </button>
+    <!-- Username Input -->
+    <div class="container-sm">
+        <div class="row">
+            <div class="col">
+                <label for="gameName" class="form-label text-light">Nombre de la partida:</label>
+                <input id="gameName" class="form-label text-light" type="text" placeholder="{{ gameName }}" aria-label="Nombre de la partida" [disabled]="true">
+                
+                <label for="gamePassword" class="form-label text-light">Contraseña:</label>
+                <input id="gamePassword" class="form-label text-light" type="text" placeholder="{{ gamePassword }}" aria-label="readonly input example" [disabled]="true">
+            </div>
+ 
+        </div>
+        <hr class="mb-5"/>
+        <div class="row m-5">
+            <div class="col text-center">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Lista de jugadores</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Loader -->
+                        <button class="btn btn-outline-light loading-message" type="button" disabled *ngIf="!playerListLoaded">
+                            <span class="spinner-border spinner-border-sm " role="status" aria-hidden="true"></span>
+                            Cargando jugadores
+                        </button>
+                        <tr *ngFor="let player of playerList">
+                            <td class="m-2 mr-md-5">{{ player }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div >
+        <button (click)="goBack()" type="button" class="button"><img src="../../../assets/icons/back.png"></button>
+        <button id="startButton" (click)="gameStart()" type="button" class="button" [disabled]="!canStart"><img src="../../../assets/icons/start.png"></button>
+        
+    </div>
+</div>

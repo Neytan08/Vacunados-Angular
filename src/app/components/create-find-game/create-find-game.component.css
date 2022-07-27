@@ -1,0 +1,55 @@
+.image-size {
+    height: 96px;
+    width: 96px;
+}
+
+.hr-username {
+    width: 50%;
+    color: #F9AB40;
+}
+
+.menu-option {
+    cursor: pointer;
+    margin: 2%;
+    border: #cb110b;
+    border-bottom: solid#F9AB40;
+    border-radius: 10%;
+    background-color: #0C2D48;
+}
+
+.menu-option:hover {
+    background-color: #F9AB40;
+}
+
+input[type=text] {
+    width: 50%;
+    background-color: #0C2D48;
+    border: none;
+    color: #A9E5D5;
+    text-align: center;
+    margin-left: 30%;
+    border-bottom: 2px solid#FFCE66;
+    border-top: 2px solid#FFCE66;
+    border-left: 2px solid#FFCE66;
+    border-right: 2px solid#FFCE66;
+}
+
+
+input[type=text]:focus {
+    background-color: #0C2D48;
+    
+}
+.align-items-center{
+    margin-left: 20%;
+}
+
+form[autocomplete="off"]{
+    padding: 2em;
+    margin-left: 10em;
+    margin-right: 10em;
+    border: white 5px solid;
+    align-items: center;
+}
+.text-danger{
+    margin-left: 13em;
+}
